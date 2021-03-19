@@ -2,15 +2,15 @@ console.log('JavaScript link: Successful');
 
 const moves = new Array(9);
 const squares = document.querySelectorAll('#board > div');
-const winMessageDiv = document.querySelector('.board-message');
+const winMessageDiv = document.querySelector('#board-message');
 const board = document.querySelector('#board');
 const reset = document.querySelector('#restart-game')
-let turnCount = 0;
+let turnCount = 1;
 let turn = 'X';
 
 function checkForWin() {
     if (moves[0] === moves[1] && moves[1] === moves[2]) {
-        if (turnCount > 5) {
+        if (turnCount > 4) {
             removeClickEventCallback()
             squares[0].classList.add('blink')
             squares[1].classList.add('blink')
@@ -18,7 +18,7 @@ function checkForWin() {
             winMessageDiv.innerHTML = `${turn} WON!!!`;
         }
     } else if (moves[3] === moves[4] && moves[4] === moves[5]){
-        if (turnCount > 5) {
+        if (turnCount > 4) {
             removeClickEventCallback()
             squares[3].classList.add('blink')
             squares[4].classList.add('blink')
@@ -26,7 +26,7 @@ function checkForWin() {
             winMessageDiv.innerHTML = `${turn} WON!!!`;
         }
     } else if (moves[6] === moves[7] && moves[7] === moves[8]){
-        if (turnCount > 5) {
+        if (turnCount > 4) {
             removeClickEventCallback()
             squares[6].classList.add('blink')
             squares[7].classList.add('blink')
@@ -34,7 +34,7 @@ function checkForWin() {
             winMessageDiv.innerHTML = `${turn} WON!!!`;
         }
     } else if (moves[0] === moves[3] && moves[3] === moves[6]){
-        if (turnCount > 5) {
+        if (turnCount > 4) {
             removeClickEventCallback()
             squares[0].classList.add('blink')
             squares[3].classList.add('blink')
@@ -42,7 +42,7 @@ function checkForWin() {
             winMessageDiv.innerHTML = `${turn} WON!!!`;
         }
     } else if (moves[1] === moves[4] && moves[4] === moves[7]){
-        if (turnCount > 5) {
+        if (turnCount > 4) {
             removeClickEventCallback()
             squares[1].classList.add('blink')
             squares[4].classList.add('blink')
@@ -50,7 +50,7 @@ function checkForWin() {
             winMessageDiv.innerHTML = `${turn} WON!!!`;
         }
     } else if (moves[2] === moves[5] && moves[5] === moves[8]){
-        if (turnCount > 5) {
+        if (turnCount > 4) {
             removeClickEventCallback()
             squares[2].classList.add('blink')
             squares[5].classList.add('blink')
@@ -58,7 +58,7 @@ function checkForWin() {
             winMessageDiv.innerHTML = `${turn} WON!!!`;
         }
     } else if (moves[0] === moves[4] && moves[4] === moves[8]){
-        if (turnCount > 5) {
+        if (turnCount > 4) {
             removeClickEventCallback()
             squares[0].classList.add('blink')
             squares[4].classList.add('blink')
@@ -66,7 +66,7 @@ function checkForWin() {
             winMessageDiv.innerHTML = `${turn} WON!!!`;
         }
     } else if (moves[2] === moves[4] && moves[4] === moves[6]){
-        if (turnCount > 5) {
+        if (turnCount > 4) {
             removeClickEventCallback()
             squares[2].classList.add('blink')
             squares[4].classList.add('blink')
@@ -88,11 +88,13 @@ function removeClickEventCallback() {
 }
 
 function handleClickEventCallback(event) {
+    console.log(turnCount, turn, moves)
     moves[event.target.id] = turn
     event.target.innerText = turn
     checkForWin()
-    turn = (turnCount % 2 === 0) ? "O" : "X";
     turnCount++
+    turn = (turnCount % 2 === 0) ? "O" : "X";
+    console.log(turnCount, turn, moves)
 }
 
 squares.forEach((square, index) => {
