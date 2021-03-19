@@ -10,7 +10,7 @@ let turn = 'X';
 
 function checkForWin() {
     if (moves[0] === moves[1] && moves[1] === moves[2]) {
-        if (turnCount > 1) {
+        if (turnCount > 5) {
             removeClickEventCallback()
             squares[0].classList.add('blink')
             squares[1].classList.add('blink')
@@ -18,59 +18,59 @@ function checkForWin() {
             winMessageDiv.innerHTML = `${turn} WON!!!`;
         }
     } else if (moves[3] === moves[4] && moves[4] === moves[5]){
-        if (turnCount > 1) {
+        if (turnCount > 5) {
             removeClickEventCallback()
-            squares[0].classList.add('blink')
-            squares[1].classList.add('blink')
-            squares[2].classList.add('blink')
+            squares[3].classList.add('blink')
+            squares[4].classList.add('blink')
+            squares[5].classList.add('blink')
             winMessageDiv.innerHTML = `${turn} WON!!!`;
         }
     } else if (moves[6] === moves[7] && moves[7] === moves[8]){
-        if (turnCount > 1) {
+        if (turnCount > 5) {
             removeClickEventCallback()
-            squares[0].classList.add('blink')
-            squares[1].classList.add('blink')
-            squares[2].classList.add('blink')
+            squares[6].classList.add('blink')
+            squares[7].classList.add('blink')
+            squares[8].classList.add('blink')
             winMessageDiv.innerHTML = `${turn} WON!!!`;
         }
     } else if (moves[0] === moves[3] && moves[3] === moves[6]){
-        if (turnCount > 1) {
+        if (turnCount > 5) {
             removeClickEventCallback()
             squares[0].classList.add('blink')
-            squares[1].classList.add('blink')
-            squares[2].classList.add('blink')
+            squares[3].classList.add('blink')
+            squares[6].classList.add('blink')
             winMessageDiv.innerHTML = `${turn} WON!!!`;
         }
     } else if (moves[1] === moves[4] && moves[4] === moves[7]){
-        if (turnCount > 1) {
+        if (turnCount > 5) {
             removeClickEventCallback()
-            squares[0].classList.add('blink')
             squares[1].classList.add('blink')
-            squares[2].classList.add('blink')
+            squares[4].classList.add('blink')
+            squares[7].classList.add('blink')
             winMessageDiv.innerHTML = `${turn} WON!!!`;
         }
     } else if (moves[2] === moves[5] && moves[5] === moves[8]){
-        if (turnCount > 1) {
+        if (turnCount > 5) {
             removeClickEventCallback()
-            squares[0].classList.add('blink')
-            squares[1].classList.add('blink')
             squares[2].classList.add('blink')
+            squares[5].classList.add('blink')
+            squares[8].classList.add('blink')
             winMessageDiv.innerHTML = `${turn} WON!!!`;
         }
     } else if (moves[0] === moves[4] && moves[4] === moves[8]){
-        if (turnCount > 1) {
+        if (turnCount > 5) {
             removeClickEventCallback()
             squares[0].classList.add('blink')
-            squares[1].classList.add('blink')
-            squares[2].classList.add('blink')
+            squares[4].classList.add('blink')
+            squares[8].classList.add('blink')
             winMessageDiv.innerHTML = `${turn} WON!!!`;
         }
     } else if (moves[2] === moves[4] && moves[4] === moves[6]){
-        if (turnCount > 1) {
+        if (turnCount > 5) {
             removeClickEventCallback()
-            squares[0].classList.add('blink')
-            squares[1].classList.add('blink')
             squares[2].classList.add('blink')
+            squares[4].classList.add('blink')
+            squares[6].classList.add('blink')
             winMessageDiv.innerHTML = `${turn} WON!!!`;
         }
     } else {

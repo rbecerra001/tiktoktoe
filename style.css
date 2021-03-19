@@ -1,15 +1,25 @@
 body {
-    background: rebeccapurple;
+    background-image: url("https://am24.mediaite.com/tms/cnt/uploads/2020/03/everything-is-fine-dog.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
-h1, h2 {
+h1, h2, h3 {
     text-align: center;
+    color: orange;
 }
 
 #restart-game {
-    display:inline-block;
-    margin:0 auto;
-    width: 200px;
+    background-color: yellow;
+    color: black;
+    font-size: 25px;
+    margin: auto;
+    width: 300px;
+    height: 100px;
+    border: 5px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 footer {
@@ -33,23 +43,23 @@ a:hover {
 }
 
 #board {
-    width: 300px;
-    height: 300px;
-    border: 3px solid red;
+    width: 600px;
+    height: 600px;
+    border: 5px solid red;
     display: flex;
     flex-wrap: wrap;
+    background: orange;
 }
 
 .square {
-    height: 100px;
-    width: 100px;
-    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+    border: 5px solid black;
     box-sizing: border-box;
     font-size: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 @-webkit-keyframes blinker {
