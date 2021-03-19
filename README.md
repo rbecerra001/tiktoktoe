@@ -3,6 +3,8 @@ The classic game of Tik Tok Toe
 
 At first I wanted to keep the design simple with a score board, the game board and a few extra buttons. 
 
+X always goes first and at the end of the game, click the restart button. 
+
 What is was supposed to look like 
 
 
