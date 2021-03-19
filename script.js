@@ -82,15 +82,15 @@ function checkForWin() {
 
 function removeClickEventCallback() {
     squares.forEach(square => {
-        (square.innerText !== turn) ? square.innerText = '' : square.classList.add('blink')
+        (square.innerText !== turn) ? square.innerText = '' : null;
         square.removeEventListener('click', handleClickEventCallback)
     })
 }
 
 function handleClickEventCallback(event) {
     moves[event.target.id] = turn
-    checkForWin()
     event.target.innerText = turn
+    checkForWin()
     turn = (turnCount % 2 === 0) ? "O" : "X";
     turnCount++
 }
